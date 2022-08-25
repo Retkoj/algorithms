@@ -1,2 +1,2 @@
-# algortithms
+# Algorithms
 Trying different algorithms
