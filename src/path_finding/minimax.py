@@ -62,7 +62,7 @@ def play_game(player_one, player_two, ply=2):
         return p2, p1
 
     while len(board.get_valid_moves()) > 0:
-        move = minimax(board, ply, player_one, player_two)
+        move, _ = minimax(board, ply, player_one, player_two)
         board.make_move(move)
         player_one, player_two = switch_turn(player_one, player_two)
 
