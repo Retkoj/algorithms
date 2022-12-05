@@ -1,13 +1,4 @@
-from enum import Enum
-
-from src.graph_algorithms.graph import Graph
-
-
-class TraverseStates(Enum):
-    """Helper class for node states during graph traversal"""
-    VISITED = 'grey'
-    ALL_NEIGHBOURS_VISITED = 'black'
-    NOT_VISITED = 'white'
+from src.graph_algorithms.graph import Graph, TraverseStates
 
 
 class DepthFirstSearch:
@@ -58,12 +49,13 @@ class DepthFirstSearch:
         Works by recursively looking up the predecessor nodes, starting at the target node and stopping when
         the start node is reached. The returned list contains the starting node and the nodes that need to be
         passed to get to the target node.
+        NOTE: Depth first search does not necessarily find the *shortest* path from start to target
 
         :param target_node: str, The end node
         :param start_node: str, Root node, defaults to self.start_node
         :return: list, [start_node, node_1, node_2, ..., node_n, target_node]
         """
-        if self.traversed:
+        if self.graph_traversed:
             start_found = False
             start_node = start_node if start_node else self.start_node
             path = []

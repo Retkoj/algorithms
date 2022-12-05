@@ -1,3 +1,13 @@
+from enum import Enum
+
+
+class TraverseStates(Enum):
+    """Helper class for node states during graph traversal"""
+    VISITED = 'grey'
+    ALL_NEIGHBOURS_VISITED = 'black'
+    NOT_VISITED = 'white'
+
+
 class Graph:
     def __init__(self, nodes: int or list, directed=False):
         """
